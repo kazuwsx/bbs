@@ -2,12 +2,12 @@
 
 namespace Ddd\Domain\Thread;
 
+use Ddd\Domain\Reply\ReplyComment;
 use Ddd\Domain\User\UserId;
 use Ddd\Domain\Thread\ThreadId;
 use Ddd\Domain\Thread\ThreadTitle;
-use Ddd\Domain\Thread\ThreadComment;
 
-final class UserEntity {
+final class ThreadEntity {
     private $id;
     private $title;
     private $comment;
@@ -16,7 +16,7 @@ final class UserEntity {
     private function __construct(
         ThreadId $id,
         ThreadTitle $title,
-        ThreadComment $comment,
+        ReplyComment $comment,
         UserId $user_id
     )
     {
@@ -29,7 +29,7 @@ final class UserEntity {
     static function reconnstruct(
         ThreadId $id,
         ThreadTitle $title,
-        ThreadComment $comment,
+        ReplyComment $comment,
         UserId $user_id
     ):ThreadEntity {
         $user = new ThreadEntity(
@@ -44,7 +44,7 @@ final class UserEntity {
     static function create(
         ThreadId $id,
         ThreadTitle $title,
-        ThreadComment $comment,
+        ReplyComment $comment,
         UserId $user_id
     ): ThreadEntity {
         $user = new ThreadEntity(
