@@ -7,7 +7,7 @@ use Ddd\Domain\User\UserId;
 use Ddd\Domain\Thread\ThreadId;
 use Ddd\Domain\Thread\ThreadTitle;
 
-final class ThreadEntity {
+final class Thread {
     private $id;
     private $title;
     private $comment;
@@ -31,8 +31,8 @@ final class ThreadEntity {
         ThreadTitle $title,
         ReplyComment $comment,
         UserId $user_id
-    ):ThreadEntity {
-        $user = new ThreadEntity(
+    ):Thread {
+        $user = new Thread(
             $id,
             $title,
             $comment,
@@ -46,8 +46,8 @@ final class ThreadEntity {
         ThreadTitle $title,
         ReplyComment $comment,
         UserId $user_id
-    ): ThreadEntity {
-        $user = new ThreadEntity(
+    ): Thread {
+        $user = new Thread(
             $id,
             $title,
             $comment,

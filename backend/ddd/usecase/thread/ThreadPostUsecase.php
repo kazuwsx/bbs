@@ -1,15 +1,14 @@
 <?php
 
-namespace Ddd\usecase\thread;
+// namespace Ddd\usecase\thread;
+
 
 use Ddd\Domain\User\UserId;
 use Ddd\Domain\Thread\ThreadId;
 use Ddd\Domain\Reply\ReplyComment;
 use Ddd\Domain\Thread\ThreadTitle;
-use Ddd\Domain\Thread\ThreadEntity;
+use Ddd\Domain\Thread\Thread;
 use Illuminate\Support\Facades\Auth;
-
-
 
 class ThreadPostUsecase
 {
@@ -28,12 +27,12 @@ class ThreadPostUsecase
 
     function execute()
     {
-        $thread = ThreadEntity::create(
+        $thread = Thread::create(
             $this->thread_id,
             $this->title,
             $this->comment,
             $this->user_id,
         );
-        
+        dd($thread);
     }
 }
