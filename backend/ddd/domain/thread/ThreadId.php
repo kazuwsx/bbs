@@ -16,7 +16,7 @@ final class ThreadId{
         return new ThreadId(Uuid::uuid1());
     }
 
-    public function getValue(): int
+    public function getValue(): string
     {
         return $this->value;
     }

@@ -8,7 +8,7 @@ final class ThreadTitle{
 
     private $value;
 
-    const MAX_LENGTH = 50;
+    const MAX_LENGTH = 64;
 
     public function __construct(string $value) {
         if(strlen($value) >= self::MAX_LENGTH) {
@@ -17,7 +17,7 @@ final class ThreadTitle{
         $this->value = $value;
     }
 
-    public function getValue(): int
+    public function getValue(): string
     {
         return $this->value;
     }

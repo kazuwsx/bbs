@@ -1,14 +1,14 @@
 <?php
 
-// namespace Ddd\usecase\thread;
-
+namespace Ddd\usecase\thread;
 
 use Ddd\Domain\User\UserId;
+use Ddd\Domain\Thread\Thread;
 use Ddd\Domain\Thread\ThreadId;
 use Ddd\Domain\Reply\ReplyComment;
 use Ddd\Domain\Thread\ThreadTitle;
-use Ddd\Domain\Thread\Thread;
 use Illuminate\Support\Facades\Auth;
+use Ddd\infrastructure\eloquent\ThreadEloquentRepository;
 
 class ThreadPostUsecase
 {
@@ -33,6 +33,7 @@ class ThreadPostUsecase
             $this->comment,
             $this->user_id,
         );
-        dd($thread);
+        ThreadEloquentRepository::save($thread);
+
     }
 }

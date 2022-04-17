@@ -55,4 +55,19 @@ final class Thread {
         );
         return $user;
     }
+
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    public function getUserId()
+    {
+        return $this->user_id;
+    }
 }
