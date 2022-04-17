@@ -9,7 +9,7 @@ final class ReplyComment{
     const MAX_LENGTH = 140;
 
     public function __construct(string $value) {
-        if(length($value) >= MAX_LENGTH){
+        if(strlen($value) >= self::MAX_LENGTH){
             throw new Exception('最大文字数' . MAX_LENGTH . 'を超えています');
         }
         $this->value = $value;

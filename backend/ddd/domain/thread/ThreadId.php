@@ -2,7 +2,7 @@
 
 namespace Ddd\Domain\Thread;
 
-final class UserId{
+final class ThreadId{
 
     private $value;
 
