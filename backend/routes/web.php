@@ -19,6 +19,8 @@ Route::get('/', function () {
 
 Route::get('/reply/post', App\Http\Controllers\Reply\PostController::class);
 
+Route::get('/thread/index', App\Http\Controllers\Thread\IndexController::class);
+
 Route::get('/thread/launch', App\Http\Controllers\Thread\LaunchController::class);
 
 Route::post('/thread/post', App\Http\Controllers\Thread\PostController::class);

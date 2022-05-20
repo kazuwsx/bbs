@@ -3,9 +3,10 @@
 namespace Ddd\usecase\thread;
 
 use Ddd\Domain\User\UserId;
-use Ddd\Domain\Thread\Thread;
+
 use Ddd\Domain\Thread\ThreadId;
 use Ddd\Domain\Reply\ReplyComment;
+use Ddd\Domain\Thread\ThreadEntity;
 use Ddd\Domain\Thread\ThreadTitle;
 use Illuminate\Support\Facades\Auth;
 use Ddd\infrastructure\eloquent\ThreadEloquentRepository;
@@ -27,12 +28,13 @@ class ThreadPostUsecase
 
     function execute()
     {
-        $thread = Thread::create(
+        $thread = ThreadEntity::create(
             $this->thread_id,
             $this->title,
             $this->comment,
             $this->user_id,
         );
+
         ThreadEloquentRepository::save($thread);
 
     }
