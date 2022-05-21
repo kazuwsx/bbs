@@ -2,14 +2,14 @@
 
 namespace Ddd\usecase\thread;
 
-use Ddd\infrastructure\eloquent\ThreadEloquentRepository;
+use Ddd\Infrastructure\FacadesDb\ThreadFacadesDbRepository;
 
 class ThreadListUsecase
 {
 
     function execute()
     {
-        $thread_entities = ThreadEloquentRepository::selectAllOrderByCreatedAtLimit10();
+        $thread_entities = ThreadFacadesDbRepository::selectAllOrderByCreatedAtLimit10();
         $threads = new ThreadListDto($thread_entities);
         // $threads = [];
         // foreach($thread_entities as $thread_entity){

@@ -1,6 +1,6 @@
 <?php
 
-namespace Ddd\infrastructure\eloquent;
+namespace Ddd\Infrastructure\FacadesDb;
 
 use Carbon\Carbon;
 use Ddd\Domain\Thread\ThreadEntity;
@@ -9,7 +9,7 @@ use Ddd\Domain\Thread\ValueObject\ThreadTitle;
 use Ddd\Domain\User\UserId;
 use Illuminate\Support\Facades\DB;
 
-class ThreadEloquentRepository
+class ThreadFacadesDbRepository
 {
     static function save(ThreadEntity $thread)
     {

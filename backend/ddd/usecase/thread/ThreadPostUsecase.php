@@ -12,9 +12,9 @@ use Ddd\Domain\Reply\ValueObject\ReplyId;
 use Ddd\Domain\Thread\ThreadEntity;
 use Ddd\Domain\Thread\ValueObject\ThreadId;
 use Ddd\Domain\Thread\ValueObject\ThreadTitle;
-use Ddd\infrastructure\eloquent\ReplyEloquentRepository;
 use Illuminate\Support\Facades\Auth;
-use Ddd\infrastructure\eloquent\ThreadEloquentRepository;
+use Ddd\Infrastructure\FacadesDb\ReplyFacadesDbRepository;
+use Ddd\Infrastructure\FacadesDb\ThreadFacadesDbRepository;
 use Illuminate\Support\Facades\DB;
 
 class ThreadPostUsecase
@@ -49,9 +49,9 @@ class ThreadPostUsecase
             $this->thread_id,
         );
 
-        DB::transaction(function ($thread, $reply) {
-            ThreadEloquentRepository::save($thread);
-            ReplyEloquentRepository::save($reply);
+        DB::transaction(function () use($thread, $reply) {
+            ThreadFacadesDbRepository::save($thread);
+            ReplyFacadesDbRepository::save($reply);
         });
     }
 }

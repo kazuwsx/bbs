@@ -1,12 +1,12 @@
 <?php
 
-namespace Ddd\infrastructure\eloquent;
+namespace Ddd\Infrastructure\FacadesDb;
 
 use Carbon\Carbon;
 use Ddd\Domain\Reply\ReplyEntity;
 use Illuminate\Support\Facades\DB;
 
-class ReplyEloquentRepository
+class ReplyFacadesDbRepository
 {
     static function save(ReplyEntity $reply)
     {
