@@ -2,9 +2,15 @@
 
 namespace Ddd\domain\thread;
 
-use Ddd\Domain\Thread\Thread;
+use Ddd\Domain\Thread\ThreadEntity;
 
 interface ThreadRepository
 {
-    function save(Thread $thread);
+    static function save(ThreadEntity $thread);
+
+    static function selectAllOrderByCreatedAtLimit10();
+
+    static function mapRecordToEntity(): ThreadEntity;
+
+    static function mapRecordsToEntity(): Array;
 }

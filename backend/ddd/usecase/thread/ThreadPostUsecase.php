@@ -6,8 +6,11 @@ use Ddd\Domain\User\UserId;
 
 use Ddd\Domain\Thread\ThreadId;
 use Ddd\Domain\Reply\ReplyComment;
+use Ddd\Domain\Reply\ReplyEntity;
+use Ddd\Domain\Reply\ReplyId;
 use Ddd\Domain\Thread\ThreadEntity;
 use Ddd\Domain\Thread\ThreadTitle;
+use Ddd\infrastructure\eloquent\ReplyEloquentRepository;
 use Illuminate\Support\Facades\Auth;
 use Ddd\infrastructure\eloquent\ThreadEloquentRepository;
 
@@ -17,6 +20,7 @@ class ThreadPostUsecase
     private $title;
     private $comment;
     private $user_id;
+    private $reply_id;
 
     function __construct(ThreadTitle $title, ReplyComment $comment)
     {
@@ -24,6 +28,7 @@ class ThreadPostUsecase
         $this->title = $title;
         $this->comment = $comment;
         $this->user_id = new UserId(Auth::id());
+        $this->reply_id = ReplyId::create();
     }
 
     function execute()
@@ -31,11 +36,17 @@ class ThreadPostUsecase
         $thread = ThreadEntity::create(
             $this->thread_id,
             $this->title,
-            $this->comment,
             $this->user_id,
         );
 
-        ThreadEloquentRepository::save($thread);
+        $reply = ReplyEntity::create(
+            $this->reply_id,
+            $this->comment,
+            $this->user_id,
+            $this->thread_id,
+        );
 
+        ThreadEloquentRepository::save($thread);
+        ReplyEloquentRepository::save($reply);
     }
 }

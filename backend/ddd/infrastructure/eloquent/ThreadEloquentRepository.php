@@ -3,7 +3,6 @@
 namespace Ddd\infrastructure\eloquent;
 
 use Carbon\Carbon;
-use Ddd\Domain\Reply\ReplyComment;
 use Ddd\Domain\Thread\ThreadEntity;
 use Ddd\Domain\Thread\ThreadId;
 use Ddd\Domain\Thread\ThreadTitle;
@@ -37,12 +36,9 @@ class ThreadEloquentRepository
 
     private static function mapRecordToEntity($thread_record): ThreadEntity
     {
-        dd($thread_record);
         return ThreadEntity::reconnstruct(
             new ThreadId($thread_record->id),
             new ThreadTitle($thread_record->title),
-            new ReplyComment($thread_record
-            ),
             new UserId($thread_record->user_id),
         );
     }

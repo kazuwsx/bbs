@@ -14,7 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create('replies', function (Blueprint $table) {
-            $table->id();
+            $table->char('id', 36);
+            $table->primary('id');
             $table->foreignId('user_id')->constrained('users');
             $table->char('thread_id', 36);
             $table->foreign('thread_id')->references('id')->on('threads');

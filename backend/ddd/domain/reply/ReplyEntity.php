@@ -55,4 +55,24 @@ final class ReplyEntity {
         );
         return $user;
     }
+
+    public function getId(): ReplyId
+    {
+        return $this->id;
+    }
+
+    public function getComment(): ReplyComment
+    {
+        return $this->comment;
+    }
+
+    public function getUserId(): UserId
+    {
+        return $this->user_id;
+    }
+
+    public function getThreadId(): ThreadId
+    {
+        return $this->thread_id;
+    }
 }
