@@ -1,6 +1,6 @@
 <?php
 
-namespace Ddd\Domain\Reply;
+namespace Ddd\Domain\Reply\ValueObject;
 
 final class ReplyComment{
 

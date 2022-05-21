@@ -3,9 +3,10 @@
 namespace App\Http\Controllers\Thread;
 
 use Illuminate\Http\Request;
-use Ddd\Domain\Reply\ReplyComment;
-use Ddd\Domain\Thread\ThreadTitle;
+
+use Ddd\Domain\Thread\ValueObject\ThreadTitle;
 use App\Http\Controllers\Controller;
+use Ddd\Domain\Reply\ValueObject\ReplyComment;
 use Ddd\usecase\thread\ThreadPostUsecase;
 
 class PostController extends Controller

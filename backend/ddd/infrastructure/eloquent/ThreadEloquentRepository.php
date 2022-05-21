@@ -4,8 +4,8 @@ namespace Ddd\infrastructure\eloquent;
 
 use Carbon\Carbon;
 use Ddd\Domain\Thread\ThreadEntity;
-use Ddd\Domain\Thread\ThreadId;
-use Ddd\Domain\Thread\ThreadTitle;
+use Ddd\Domain\Thread\ValueObject\ThreadId;
+use Ddd\Domain\Thread\ValueObject\ThreadTitle;
 use Ddd\Domain\User\UserId;
 use Illuminate\Support\Facades\DB;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Ddd\Domain\Thread;
+namespace Ddd\Domain\Thread\ValueObject;
 
 use Exception;
 

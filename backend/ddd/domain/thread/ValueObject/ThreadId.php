@@ -1,10 +1,11 @@
 <?php
 
-namespace Ddd\Domain\Reply;
+namespace Ddd\domain\thread\ValueObject;
 
+use Exception;
 use Ramsey\Uuid\Uuid;
 
-final class ReplyId{
+final class ThreadId{
 
     private $value;
 
@@ -18,7 +19,7 @@ final class ReplyId{
     }
 
     public static function create() {
-        return new self(Uuid::uuid1());
+        return new ThreadId(Uuid::uuid1());
     }
 
     public function getValue(): string

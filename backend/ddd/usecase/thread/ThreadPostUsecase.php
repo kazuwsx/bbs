@@ -4,12 +4,14 @@ namespace Ddd\usecase\thread;
 
 use Ddd\Domain\User\UserId;
 
-use Ddd\Domain\Thread\ThreadId;
-use Ddd\Domain\Reply\ReplyComment;
+
+
 use Ddd\Domain\Reply\ReplyEntity;
-use Ddd\Domain\Reply\ReplyId;
+use Ddd\Domain\Reply\ValueObject\ReplyComment;
+use Ddd\Domain\Reply\ValueObject\ReplyId;
 use Ddd\Domain\Thread\ThreadEntity;
-use Ddd\Domain\Thread\ThreadTitle;
+use Ddd\Domain\Thread\ValueObject\ThreadId;
+use Ddd\Domain\Thread\ValueObject\ThreadTitle;
 use Ddd\infrastructure\eloquent\ReplyEloquentRepository;
 use Illuminate\Support\Facades\Auth;
 use Ddd\infrastructure\eloquent\ThreadEloquentRepository;

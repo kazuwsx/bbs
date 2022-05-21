@@ -2,10 +2,12 @@
 
 namespace Ddd\Domain\Reply;
 
+use Ddd\Domain\Reply\ValueObject\ReplyComment;
+use Ddd\Domain\Reply\ValueObject\ReplyId;
 use Ddd\Domain\User\UserId;
-use Ddd\Domain\Reply\ReplyId;
-use Ddd\Domain\Thread\ThreadId;
-use Ddd\Domain\Reply\ReplyComment;
+
+use Ddd\Domain\Thread\ValueObject\ThreadId;
+
 
 final class ReplyEntity {
     private $id;

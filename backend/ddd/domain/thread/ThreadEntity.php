@@ -3,8 +3,8 @@
 namespace Ddd\Domain\Thread;
 
 use Ddd\Domain\User\UserId;
-use Ddd\Domain\Thread\ThreadId;
-use Ddd\Domain\Thread\ThreadTitle;
+use Ddd\Domain\Thread\ValueObject\ThreadId;
+use Ddd\Domain\Thread\ValueObject\ThreadTitle;
 
 final class ThreadEntity {
     private $id;
