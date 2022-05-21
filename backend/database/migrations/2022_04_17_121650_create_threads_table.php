@@ -16,8 +16,9 @@ return new class extends Migration
     {
         Schema::create('threads', function (Blueprint $table) {
             $table->char('id', 36);
+            $table->primary('id');
             $table->char('title', 64);
-            $table->foreignId('id')->constrained('users');
+            $table->foreignId('user_id')->constrained();
             $table->timestamp('created_at')->nullable(false);
             $table->timestamp('updated_at')->nullable(false);
         });
@@ -30,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('thread');
+        Schema::dropIfExists('threads');
     }
 };
