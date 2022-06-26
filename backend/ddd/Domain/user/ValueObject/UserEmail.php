@@ -1,18 +1,18 @@
 <?php
 
-namespace Ddd\Domain\User;
+namespace Ddd\Domain\ValueObject\User;
 
 use Exception;
 
-final class UserName{
+final class UserEmail{
 
     private $value;
 
-    const MAX_LENGTH = 20;
+    const MAX_LENGTH = 255;
 
     public function __construct(string $value) {
         if($value > self::MAX_LENGTH){
-            throw new Exception('名前の文字数が20文字以上になっています。');
+            throw new Exception('メールアドレスの文字数が255文字以上になっています。');
         }
         $this->value = $value;
     }
@@ -27,8 +27,10 @@ final class UserName{
         $validation_rule = [
             'required'
             ,'string'
+            ,'email:rfc,dns,strict,spoof'
             ,'max:' . self::MAX_LENGTH
-        ];
+            ,'unique:users'
+    ];
 
         return $validation_rule;
     }

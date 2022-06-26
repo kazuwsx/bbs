@@ -2,9 +2,10 @@
 
 namespace Ddd\Domain\Thread;
 
-use Ddd\Domain\User\UserId;
+
 use Ddd\Domain\Thread\ValueObject\ThreadId;
 use Ddd\Domain\Thread\ValueObject\ThreadTitle;
+use Ddd\Domain\ValueObject\User\UserId;
 
 final class ThreadEntity {
     private $id;

@@ -6,7 +6,7 @@ use Carbon\Carbon;
 use Ddd\Domain\Thread\ThreadEntity;
 use Ddd\Domain\Thread\ValueObject\ThreadId;
 use Ddd\Domain\Thread\ValueObject\ThreadTitle;
-use Ddd\Domain\User\UserId;
+use Ddd\Domain\ValueObject\User\UserId;
 use Illuminate\Support\Facades\DB;
 
 class ThreadFacadesDbRepository

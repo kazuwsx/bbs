@@ -2,9 +2,9 @@
 
 namespace Ddd\Domain\User;
 
-use Ddd\Domain\User\UserId;
-use Ddd\Domain\User\UserName;
-use Ddd\Domain\User\UserEmail;
+use Ddd\Domain\ValueObject\User\UserEmail;
+use Ddd\Domain\ValueObject\User\UserId;
+use Ddd\Domain\ValueObject\User\UserName;
 
 final class UserEntity {
     private $id;

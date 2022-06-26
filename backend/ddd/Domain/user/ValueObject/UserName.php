@@ -1,6 +1,6 @@
 <?php
 
-namespace Ddd\Domain\User;
+namespace Ddd\Domain\ValueObject\User;
 
 use Exception;
 
