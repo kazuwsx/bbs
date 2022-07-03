@@ -3,7 +3,7 @@
 namespace Ddd\Domain\User;
 
 use Ddd\Domain\ValueObject\User\UserEmail;
-use Ddd\Domain\ValueObject\User\UserId;
+use Ddd\Domain\User\ValueObject\UserId;
 use Ddd\Domain\ValueObject\User\UserName;
 
 final class UserEntity {

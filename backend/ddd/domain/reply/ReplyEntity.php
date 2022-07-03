@@ -5,7 +5,7 @@ namespace Ddd\Domain\Reply;
 use Ddd\Domain\Reply\ValueObject\ReplyComment;
 use Ddd\Domain\Reply\ValueObject\ReplyId;
 use Ddd\Domain\Thread\ValueObject\ThreadId;
-use Ddd\Domain\ValueObject\User\UserId;
+use Ddd\Domain\User\ValueObject\UserId;
 
 final class ReplyEntity {
     private $id;

@@ -5,7 +5,7 @@ namespace Ddd\Domain\Thread;
 
 use Ddd\Domain\Thread\ValueObject\ThreadId;
 use Ddd\Domain\Thread\ValueObject\ThreadTitle;
-use Ddd\Domain\ValueObject\User\UserId;
+use Ddd\Domain\User\ValueObject\UserId;
 
 final class ThreadEntity {
     private $id;

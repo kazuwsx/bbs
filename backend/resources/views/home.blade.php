@@ -20,4 +20,5 @@
         </div>
     </div>
 </div>
+<a href="/thread/index">thread</a>
 @endsection

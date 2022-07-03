@@ -26,7 +26,7 @@
     <div id="app">
         <nav>
             <div>
-                <a href="{{ url('/home') }}">
+                <a href="{{ url('/') }}">
                     {{ config('app.name', 'home') }}
                 </a>
 

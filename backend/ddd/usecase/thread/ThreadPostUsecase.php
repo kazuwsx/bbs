@@ -11,7 +11,7 @@ use Ddd\Domain\Reply\ValueObject\ReplyId;
 use Ddd\Domain\Thread\ThreadEntity;
 use Ddd\Domain\Thread\ValueObject\ThreadId;
 use Ddd\Domain\Thread\ValueObject\ThreadTitle;
-use Ddd\Domain\ValueObject\User\UserId;
+use Ddd\Domain\User\ValueObject\UserId;
 use Illuminate\Support\Facades\Auth;
 use Ddd\Infrastructure\FacadesDb\ReplyFacadesDbRepository;
 use Ddd\Infrastructure\FacadesDb\ThreadFacadesDbRepository;
