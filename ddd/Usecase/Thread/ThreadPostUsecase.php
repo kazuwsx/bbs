@@ -34,7 +34,7 @@ class ThreadPostUsecase
         $this->reply_id = ReplyId::create();
     }
 
-    function execute()
+    function execute(): ThreadId
     {
         $thread = ThreadEntity::create(
             $this->thread_id,
@@ -53,5 +53,7 @@ class ThreadPostUsecase
             ThreadFacadesDbRepository::save($thread);
             ReplyFacadesDbRepository::save($reply);
         });
+
+        return $thread->getId();
     }
 }

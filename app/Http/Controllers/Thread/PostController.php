@@ -15,7 +15,8 @@ class PostController extends Controller
         $title = new ThreadTitle($request->title);
         $comment = new ReplyComment($request->comment);
         $thread_post_usecase = new ThreadPostUsecase($title, $comment);
-        $thread_post_usecase->execute();
-        return view('thread.posted');
+        $thread_id = $thread_post_usecase->execute();
+        $res['thread_id'] = $thread_id->getValue();
+        return view('thread.posted', $res);
     }
 }

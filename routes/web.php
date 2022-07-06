@@ -20,6 +20,8 @@ Route::get('/thread/launch', App\Http\Controllers\Thread\LaunchController::class
 
 Route::post('/thread/post', App\Http\Controllers\Thread\PostController::class);
 
+Route::get('/thread/{thread_id}', App\Http\Controllers\Thread\ShowController::class);
+
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
