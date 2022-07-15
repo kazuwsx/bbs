@@ -25,11 +25,11 @@ class ThreadPostUsecase
     private $user_id;
     private $reply_id;
 
-    function __construct(ThreadTitle $title, ReplyComment $comment)
+    function __construct(string $title, string $comment)
     {
         $this->thread_id = ThreadId::create();
-        $this->title = $title;
-        $this->comment = $comment;
+        $this->title = new ThreadTitle($title);
+        $this->comment = new ReplyComment($comment);
         $this->user_id = new UserId(Auth::id());
         $this->reply_id = ReplyId::create();
     }

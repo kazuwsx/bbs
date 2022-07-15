@@ -5,7 +5,7 @@
     <a href="/thread/launch">掲示板を立てる</a>
     @foreach($threads as $thread)
     <div>
-        {{ $thread->title->getValue() }};
+        {{ $thread->title->val }};
     </div>
     @endforeach
 @endsection

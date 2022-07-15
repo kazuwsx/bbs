@@ -12,11 +12,9 @@ use Ddd\usecase\thread\ThreadPostUsecase;
 class PostController extends Controller
 {
     public function __invoke(Request $request) {
-        $title = new ThreadTitle($request->title);
-        $comment = new ReplyComment($request->comment);
-        $thread_post_usecase = new ThreadPostUsecase($title, $comment);
+        $thread_post_usecase = new ThreadPostUsecase($request->title, $request->comment);
         $thread_id = $thread_post_usecase->execute();
-        $res['thread_id'] = $thread_id->getValue();
+        $res['thread_id'] = $thread_id->val;
         return view('thread.posted', $res);
     }
 }

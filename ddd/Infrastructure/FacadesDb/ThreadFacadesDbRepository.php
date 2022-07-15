@@ -14,9 +14,9 @@ class ThreadFacadesDbRepository
     static function save(ThreadEntity $thread)
     {
         DB::table('threads')->insert([
-            'id' => $thread->getId()->getValue(),
-            'title' => $thread->getTitle()->getValue(),
-            'user_id' => $thread->getUserId()->getValue(),
+            'id' => $thread->getId()->val,
+            'title' => $thread->getTitle()->val,
+            'user_id' => $thread->getUserId()->val,
             "created_at" =>  Carbon::now(),
             "updated_at" =>  Carbon::now(),
         ]);

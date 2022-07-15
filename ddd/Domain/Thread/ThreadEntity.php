@@ -8,9 +8,9 @@ use Ddd\Domain\Thread\ValueObject\ThreadTitle;
 use Ddd\Domain\User\ValueObject\UserId;
 
 final class ThreadEntity {
-    private $id;
-    private $title;
-    private $user_id;
+    private ThreadId $id;
+    private ThreadTitle $title;
+    private UserId $user_id;
 
     private function __construct(
         ThreadId $id,
@@ -49,7 +49,7 @@ final class ThreadEntity {
         return $user;
     }
 
-    public function getId()
+    public function getId(): ThreadId
     {
         return $this->id;
     }

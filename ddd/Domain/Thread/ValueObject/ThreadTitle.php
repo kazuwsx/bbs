@@ -6,19 +6,14 @@ use Exception;
 
 final class ThreadTitle{
 
-    private $value;
+    public readonly string $val;
 
     const MAX_LENGTH = 64;
 
-    public function __construct(string $value) {
-        if(strlen($value) >= self::MAX_LENGTH) {
+    public function __construct(string $val) {
+        if(strlen($val) >= self::MAX_LENGTH) {
             throw new Exception('最大文字数' . MAX_LENGTH . 'を超えています');
         }
-        $this->value = $value;
-    }
-
-    public function getValue(): string
-    {
-        return $this->value;
+        $this->val = $val;
     }
 }

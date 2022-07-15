@@ -11,10 +11,10 @@ class ReplyFacadesDbRepository
     static function save(ReplyEntity $reply)
     {
         DB::table('replies')->insert([
-            'id' => $reply->getId()->getValue(),
-            'comment' => $reply->getComment()->getValue(),
-            'user_id' => $reply->getUserId()->getValue(),
-            'thread_id' => $reply->getThreadId()->getValue(),
+            'id' => $reply->getId()->val,
+            'comment' => $reply->getComment()->val,
+            'user_id' => $reply->getUserId()->val,
+            'thread_id' => $reply->getThreadId()->val,
             "created_at" =>  Carbon::now(),
             "updated_at" =>  Carbon::now(),
         ]);
